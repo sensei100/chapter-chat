@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   belongs_to :club, optional: true
   has_many :books
+  has_many :posts
 
 end
