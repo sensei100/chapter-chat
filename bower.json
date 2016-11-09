@@ -12,7 +12,7 @@
       "angular": "v1.5.8",
       "angular-ui-router": "latest",
       "angular-devise": "latest",
-      "bootstrap": "latest"
+      "bootstrap-sass-official": "latest"
     }
   }
 }
