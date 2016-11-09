@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'active_model_serializers'
 gem 'devise'
 gem 'bower-rails'
+gem 'angular-rails-templates'
+gem 'responders'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
