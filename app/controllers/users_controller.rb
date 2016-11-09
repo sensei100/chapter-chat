@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit]
 
   def show
-    user = user.last
+    user = User.find_by_id(params[:id])
     render json: user
   end
 
