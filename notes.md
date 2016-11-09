@@ -14,3 +14,11 @@ Users: belongs to clubs, have many posts, have many comments, have many books (c
 Posts: belongs to books, belongs to users, have many comments(content, user_id, book_id)
 Comments: belong to posts, belong to members(post_id, user_id)
 
+Javascript and AngularJS:
+- Use bower to handle front end assets
+- Angular templates (angular-rails-templates)
+- Angular UI Router
+- Angular Devise (front end authentication)
+- Moment.js (Not sure if I need this)
+- Bootstrap or Semantic UI?
+
