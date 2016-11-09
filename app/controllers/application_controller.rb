@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_paramters, if: :devise_controller?
   
 
+  def index
+  end
+
   protected
 
   def configure_permitted_parameters
