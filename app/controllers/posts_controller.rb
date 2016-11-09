@@ -19,6 +19,7 @@ class PostsController < ApplicationController
       render json: 
       { errors: post.errors.full_messages },
       status: :unprocessable_entity
+    end
   end
 
   def update
@@ -29,6 +30,7 @@ class PostsController < ApplicationController
       render json: 
       { errors: post.errors.full_messages },
       status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -36,15 +38,17 @@ class PostsController < ApplicationController
     if post.user == current_user.id
       if post.destroy 
         render json: { status: 'ok' }
-    else
+      else
       render json: 
-      { errors: post.errors.full_messages },
-      status: :unprocessable_entity
+        { errors: post.errors.full_messages },
+        status: :unprocessable_entity
+      end
+    end
   end
 
   private
 
   def post_params
     params.require(:post).permit(:content, :user_id, :book_id)
-
+  end
 end

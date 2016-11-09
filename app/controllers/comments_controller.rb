@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update, :destroy]
 
   def index
-    comments = Comment.all
+    post = Post.find(params[:id])
+    comments = post.all
     render json: comments
   end
 
@@ -19,6 +20,7 @@ class CommentsController < ApplicationController
       render json: 
       { errors: comment.errors.full_messages },
       status: :unprocessable_entity
+    end
   end
 
   def update
@@ -29,6 +31,7 @@ class CommentsController < ApplicationController
       render json: 
       { errors: comment.errors.full_messages },
       status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -36,15 +39,17 @@ class CommentsController < ApplicationController
     if comment.user == current_user.id
       if comment.destroy 
         render json: { status: 'ok' }
-    else
-      render json: 
-      { errors: comment.errors.full_messages },
-      status: :unprocessable_entity
+      else
+        render json: 
+        { errors: comment.errors.full_messages },
+        status: :unprocessable_entity
+      end
+    end
   end
 
   private
 
   def comment_params
     params.require(:comment).permit(:content, :user_id, :post_id)
-
+  end
 end

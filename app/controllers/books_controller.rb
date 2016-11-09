@@ -19,6 +19,7 @@ class BooksController < ApplicationController
       render json: 
       { errors: book.errors.full_messages },
       status: :unprocessable_entity
+    end
   end
 
   def update
@@ -29,6 +30,7 @@ class BooksController < ApplicationController
       render json: 
       { errors: book.errors.full_messages },
       status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -40,5 +42,5 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :author, :club_id)
-
+  end
 end

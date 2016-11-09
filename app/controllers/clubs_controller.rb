@@ -19,6 +19,7 @@ class ClubsController < ApplicationController
       render json: 
       { errors: club.errors.full_messages },
       status: :unprocessable_entity
+    end
   end
 
   def update
@@ -29,14 +30,17 @@ class ClubsController < ApplicationController
       render json: 
       { errors: club.errors.full_messages },
       status: :unprocessable_entity
+    end
   end
 
   def destroy
+    club = CLub.find(params[:id])
+
   end
 
   private
 
   def club_params
     params.require(:club).permit(:name, :location)
-
+  end
 end
