@@ -28,17 +28,24 @@
 
 #subtitle {
   font-family: 'Raleway', cursive;
-  color: #444;
+  color: #777;
   letter-spacing: 1px;
 }
 
 #navbar {
   width: 100%;
   display: inline-block;
-  color: white;
-  font-family: 'Raleway', cursive;
-  font-size: 1.2em;
-  line-height: 1.7;
+  color: #777;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.5em;
   border-radius: 0;
+  
+}
 
+ul li {
+  list-style-type: none;
+  float: left;
+  margin: 15px 25px;
+  padding: 0;
+  
 }
