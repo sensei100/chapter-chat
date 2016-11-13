@@ -89,3 +89,21 @@
   background: url("user-banner.jpg");
   background-size: cover;
 }
+
+.sidebar-right {
+  float: right;
+  width: 35%;
+  height: 100vh;
+  background: url('about-banner.jpg');
+  background-size: cover;
+  margin-top: -5px;
+  box-sizing: border-box;
+}
+
+.about {
+  margin-top: 100px;
+  width: 65%;
+  padding: 30px;
+  font-family: 'Raleway', cursive;
+  font-size: 1.8em;
+}
