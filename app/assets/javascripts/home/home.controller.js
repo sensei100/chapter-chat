@@ -1,12 +1,12 @@
 (function() { 
   'use strict';
 
-  function ClubController($scope) {
+  function HomeController($scope) {
     $scope.name = "test"
   };
 
 angular
   .module('app')
-  .controller('ClubController', ClubController);
+  .controller('HomeController', HomeController);
 
 }());
