@@ -2,7 +2,7 @@
   'use strict';
 
   function ClubController($scope) {
-    $scope.name = "test"
+    $scope.name = "club name"
   };
 
 angular
