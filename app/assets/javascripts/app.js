@@ -1,3 +1,4 @@
-angular
-  .module('app', ['ui.router', 'templates', 'Devise'])
-  
+
+
+  angular
+    .module('app', ['ui.router', 'templates', 'Devise']);

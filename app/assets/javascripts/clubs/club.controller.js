@@ -3,7 +3,9 @@
 
   function ClubController($scope) {
     $scope.name = "club name"
-  };
+  }
+
+  ClubController.$inject = ['$scope']
 
 angular
   .module('app')

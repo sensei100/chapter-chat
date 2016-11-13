@@ -3,7 +3,9 @@
 
   function HomeController($scope) {
     $scope.name = "test"
-  };
+  }
+
+  HomeController.$inject = ['$scope']
 
 angular
   .module('app')
