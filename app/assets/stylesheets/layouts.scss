@@ -42,10 +42,25 @@
   
 }
 
-ul li {
+.nav-item {
   list-style-type: none;
   float: left;
-  margin: 15px 25px;
-  padding: 0;
-  
+  margin: 15px 40px;
+  padding: 0; 
+
+  a {
+    text-decoration: none;
+    color: white;
+    display: block;
+  }
+
+  a:hover {
+    color: #777;
+    text-decoration: none;
+  }
+
+  a.active {
+    color: #777;
+    text-decoration: none;
+  }
 }
