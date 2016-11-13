@@ -27,4 +27,9 @@ angular
         templateUrl: 'profile/profile.html',
         controller: 'ProfileController as vm'
       })
+        .state('booksDetails' {
+        url: '/books/details',
+        templateUrl: 'views/books/details.html',
+        controller: 'BookDetailsController as vm'
+      })
   })
