@@ -8,7 +8,16 @@
     </div>
   </div>
 </div>
+<header id="navbar" class="navbar navbar-inverse">
+    <div class="container">
+      <ul>
+        <li class="nav-item"><a href="#" ui-sref="home" ui-sref-active="active">Home</a></li>
+        <li class="nav-item"><a href="#" ui-sref="about" ui-sref-active="active">About</a></li>
+         <li class="nav-item"><a href="#" ui-sref="home.clubs" ui-sref-active="active">Clubs</a></li>
+        <li class="nav-item"><a href="#" ui-sref="profile" ui-sref-active="active">Profile</a></li>
+        <li class="nav-item"><a href="#" ui-sref="home.books" ui-sref-active="active">Books</a></li>
+      </ul>
+    </div>
+  </header>
 
-
-
-<h1>{{ name }} </h1>
+<ui-view></ui-view>

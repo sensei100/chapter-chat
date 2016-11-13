@@ -2,7 +2,7 @@
   'use strict';
 
   function HomeController($scope) {
-    $scope.name = "test"
+    $scope.name = "home"
   }
 
   HomeController.$inject = ['$scope']
