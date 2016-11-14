@@ -10,16 +10,22 @@
     templateUrl: 'profile/components/clubs-component/clubs.html'
   }
 
-  function ClubsComponentController() {
+  function ClubsComponentController(ClubFactory) {
     var ctrl = this
-    ctrl.clubs = [
-      {
-        name: "My first club",
-      },
-      {
-        name: "My second club",
-      }
-    ]
+    activate()
+
+    function activate() {
+      getClubs()
+    }
+
+    function getClubs() {
+      return ClubFactory.getClubs()
+        .then(setClubs)
+    }
+
+    function setClubs(data) {
+      ctrl.clubs = data
+    }
   }
 
   angular
