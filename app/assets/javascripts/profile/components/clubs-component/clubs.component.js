@@ -24,7 +24,7 @@
     }
 
     function setClubs(data) {
-      ctrl.clubs = data
+      ctrl.clubs = data;
     }
   }
 

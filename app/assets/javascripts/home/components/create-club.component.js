@@ -11,12 +11,14 @@
   }
 
   function CreateClubsComponentController(ClubFactory, $state) {
-    var ctrl = this
+    var ctrl = this;
+
+    ctrl.createClub = createClub;
    
     function createClub() {
       return ClubFactory.createClub(ctrl.newClub)
         .then(function() {
-          $state.go('/clubs')
+          $state.go('home.clubs')
         })
     }
   }

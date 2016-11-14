@@ -5,6 +5,7 @@
   function ClubFactory($http) {
     return {
       getClubs: getClubs,
+      //getClub: getCllub.
       //getUserClubs: getUserClubs,
       createClub: createClub
       //updateClub: updateClub,
@@ -17,7 +18,7 @@
         .catch(handleError)
     }
 
-    function createClub() {
+    function createClub(club) {
       var req = {
         method: 'POST',
         url: '/clubs',
@@ -25,16 +26,30 @@
           'Content-Type': 'application/json'
         },
         data: { 
-          name: name,
-          location: location
+          club: club
         }
-      }
+      };
 
         return $http(req)
           .catch(handleError);
         }
-    
 
+    function getClub() {
+
+    }
+
+    function getUserClub() {
+
+    }
+
+    function updateClub() {
+
+    }
+
+    function deleteClub() {
+
+    }
+    
     function handleResponse(response) {
       console.log(response)
       return response.data
