@@ -72,7 +72,7 @@
   background: #84ABAA;
   margin-top: -5px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 50px;
 }
 
 .main {
@@ -122,4 +122,24 @@
   text-align: center;
   font-family: 'Raleway', cursive;
   color: #42282C;
+}
+
+.profile-links {
+  font-family: 'Raleway', cursive;
+  font-size: 20px;
+  color: #42282C;
+  line-height: 2.0;
+}
+
+a.profile-links:active,
+a.profile-links:hover,
+a.profile-links:focus {
+  text-decoration: none;
+  color: #DED1B6; 
+}
+
+p {
+  font-family: 'Raleway', cursive;
+  font-size: 1.2em;
+  
 }
