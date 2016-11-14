@@ -147,12 +147,6 @@ p {
   margin: 50px;
   font-family: 'Raleway', cursive;
   font-size: 1.2em;
-
-}
-
-.submit-btn {
-  background: #84ABAA;
-  margin-left: 30%;
 }
 
 label{
@@ -183,4 +177,12 @@ form input[type="text"] {
 .form-error {
   color: red;
   margin-bottom: 10px;
+}
+
+.dropdown-toggle,
+.submit-btn {
+  background: #84ABAA;
+  margin-left: 30%;
+  font-family: 'Raleway', cursive;
+  margin-top: 10px;
 }
