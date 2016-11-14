@@ -4,9 +4,9 @@
 
   function ClubFactory($http) {
     return {
-      getClubs: getClubs
+      getClubs: getClubs,
       //getUserClubs: getUserClubs,
-      //createClub: createClub,
+      createClub: createClub
       //updateClub: updateClub,
       //deleteClub: deleteClub
     }
@@ -16,6 +16,24 @@
         .then(handleResponse)
         .catch(handleError)
     }
+
+    function createClub() {
+      var req = {
+        method: 'POST',
+        url: '/clubs',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: { 
+          name: name,
+          location: location
+        }
+      }
+
+        return $http(req)
+          .catch(handleError);
+        }
+    
 
     function handleResponse(response) {
       console.log(response)
