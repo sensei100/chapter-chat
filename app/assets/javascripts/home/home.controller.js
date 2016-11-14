@@ -2,9 +2,28 @@
   'use strict';
 
   function HomeController($scope) {
-    $scope.name = "home"
-  }
 
+    var vm = this;
+
+    $scope.query = {}
+    $scope.clubs = [
+      {
+        name: "Jen's Club",
+        location: "PA"
+      },
+      {
+        name: "Testing",
+        location: "Anywhere"
+      },
+      {
+        name: "Third Club",
+        location: "Minneapolis"
+      }
+    ];
+
+    $scope.orderProp = "name";
+  };
+    
   HomeController.$inject = ['$scope']
 
 angular
