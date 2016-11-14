@@ -2,7 +2,7 @@
   'use strict';
 
   function ProfileController($scope) {
-    $scope.name = "home"
+    $scope.username = "Jen"
   }
 
   ProfileController.$inject = ['$scope']
