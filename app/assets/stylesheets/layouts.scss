@@ -152,5 +152,30 @@ p {
 
 .submit-btn {
   background: #84ABAA;
-  margin-left: 10px;
+  margin-left: 30%;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 100px;
+}
+
+form input[type="text"] {
+  display: inline-block;
+  float: left;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+.form-div {
+  margin-top: 50px;
+  font-family: 'Raleway', cursive;
+  text-align: left;
+}
+
+.home-headline {
+  font-size: 1.8em;
+  font-family: 'Raleway', cursive;
 }
