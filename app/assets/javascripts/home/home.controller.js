@@ -2,10 +2,14 @@
   'use strict';
 
   function HomeController($scope) {
+    Object.defineProperty($scope, "queryFilter", {
+      get: function() {
+        var out = {};
+        out[$scope.queryBy || "$"] = $scope.query;
+        return out;
+      }
+    });
 
-    var vm = this;
-
-    $scope.query = {}
     $scope.clubs = [
       {
         name: "Jen's Club",
@@ -20,8 +24,6 @@
         location: "Minneapolis"
       }
     ];
-
-    $scope.orderProp = "name";
   };
     
   HomeController.$inject = ['$scope']

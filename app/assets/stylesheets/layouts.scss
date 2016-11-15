@@ -149,11 +149,12 @@ p {
   font-size: 1.2em;
 }
 
-label{
+label {
     display: inline-block;
     float: left;
     clear: left;
-    width: 100px;
+    width: 80px;
+    font-family: 'Raleway', cursive;
 }
 
 form input[type="text"] {
@@ -185,3 +186,25 @@ form input[type="text"] {
   font-family: 'Raleway', cursive;
   margin-top: 10px;
 }
+
+.search-box {
+  margin: 30px;
+  padding-bottom: 80px;
+  font-family: 'Raleway', cursive;
+  font-size: 1.2em;
+}
+
+.club-list {
+  list-style-type: none;
+  font-family: 'Raleway', cursive;
+  font-size: 1.2em;
+}
+
+.club-list-item a {
+  color: #B9340B;
+  margin-top: 100px;
+}
+
+.club-list-item a:hover {
+  text-decoration: none;
+  }
