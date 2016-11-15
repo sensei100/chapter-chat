@@ -222,4 +222,46 @@ form input[type="text"] {
   background: #C5BE8B;
   margin: -5px 0;
   width: 100hw;
+  padding-bottom: 20px;
+}
+
+.book-search-box {
+  background: #498379;
+  border: 5px solid #1d1d1d;
+  color: #1d1d1d;
+  width: 75%;
+  margin: 30px auto;
+  padding-bottom: 20px;
+}
+
+.book-title {
+  text-align: center;
+  font-family: 'Sue Ellen Francisco', cursive;
+  letter-spacing: 2px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#book-search-label {
+  width: 150px;
+  margin-left: 50px;
+  text-align: right;
+  margin-top: 2px;
+  font-family: 'Raleway', cursive;
+  font-size: 1.2em;
+}
+
+#book-input {
+  width: 450px;
+  height: 30px;
+  margin: 0 10px;
+  font-family: 'Raleway', cursive;
+  font-size: 1.2em;
+}
+
+.book-submit {
+  background: #C5BE8B;
+  color: #1d1d1d;
+  font-family: 'Raleway', cursive;
+  font-size: 1.2em;
 }
