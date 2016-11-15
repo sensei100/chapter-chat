@@ -5,7 +5,7 @@
   angular
     .module('app')
     .config([
-      '$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+      '$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
       $stateProvider
         .state('home', {
           url: '/',
@@ -15,6 +15,11 @@
         .state('home.clubs', {
           url: '/clubs',
           templateUrl: 'clubs/clubs.html',
+          controller: 'ClubController as vm'
+        })
+          .state('home.clubs.club', {
+          url: '/clubs/:clubId',
+          templateUrl: 'clubs/club.html',
           controller: 'ClubController as vm'
         })
          .state('home.books', {

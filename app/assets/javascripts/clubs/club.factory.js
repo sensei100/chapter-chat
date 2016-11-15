@@ -5,7 +5,7 @@
   function ClubFactory($http) {
     return {
       getClubs: getClubs,
-      //getClub: getCllub.
+      getClub: getClub,
       //getUserClubs: getUserClubs,
       createClub: createClub
       //updateClub: updateClub,
@@ -34,8 +34,10 @@
           .catch(handleError);
         }
 
-    function getClub() {
-
+    function getClub(clubId) {
+      return $http.get('club', {params: {clubId: clubId}})
+        .then(handleResponse)
+        .catch(handleError);
     }
 
     function getUserClub() {
@@ -59,6 +61,8 @@
       console.log(error) 
     }
   }
+
+  ClubFactory.$inject = ['$http']
 
   angular
     .module('app')
