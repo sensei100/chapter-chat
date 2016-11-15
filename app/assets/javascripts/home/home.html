@@ -1,4 +1,3 @@
-<div class="container-fluid">
   <div class="row">
     <div id="home" class="banner">
       <div id="site-brand">
@@ -10,23 +9,9 @@
 </div>
 
 <div ng-include="'home/navigation.html'"></div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 form-div">
-      <h4 class="home-headline">Are you looking to connect with other readers?  Find a club in your area below.</h4>
-        <div ng-controller="HomeController">
-          <div class="search-box">
-            <label for="query">Search :</td>
-            <input name="query" ng-model="query" />
-          </div>
-          <div>
-            <ul class="club-list">
-              <li class="club-list-item" ng-repeat="club in clubs | filter:queryFilter"><a href="#" ui-sref="clubDetail"> {{club.name}} - {{club.location}}</a></li>    
-            </ul>
-          </div>
-        </div>
-    </div>    
-    <create-club class="col-md-6 form-div"></create-club>
+  <div class="intro container-fluid">
+    <h2>Join our community of readers!</h2>
+    <h3>Find a club or create your own to connect with others and discuss your favorite titles!</h3>
   </div>
-</div>
+
 <ui-view></ui-view>

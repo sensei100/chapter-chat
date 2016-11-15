@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .banner {
   height: 500px;
   background: url("home-books.jpg");
@@ -40,6 +45,7 @@
   font-size: 1.7em;
   border-radius: 0;
   margin-bottom: 0;
+  padding-left: 20%;
 }
 
 .nav-item {
@@ -207,4 +213,13 @@ form input[type="text"] {
 
 .club-list-item a:hover {
   text-decoration: none;
-  }
+}
+
+.intro {
+  text-align: center;
+  font-family: 'Sue Ellen Francisco', cursive;
+  letter-spacing: 2px;
+  background: #C5BE8B;
+  margin: -5px 0;
+  width: 100hw;
+}
