@@ -17,10 +17,15 @@
           templateUrl: 'clubs/clubs.html',
           controller: 'ClubController as vm'
         })
-          .state('home.clubs.club', {
-          url: '/clubs/:clubId',
+          .state('home.club', {
+          url: 'clubs/:id',
           templateUrl: 'clubs/club.html',
-          controller: 'ClubController as vm'
+          controller: 'ClubController as vm',
+          resolve: {
+            club: function($http, $stateParams) {
+              return $http.get('/clubs/' + $stateParams.id);
+            }
+          }
         })
          .state('books', {
           url: '/books',

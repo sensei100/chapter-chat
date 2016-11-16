@@ -11,7 +11,7 @@
 <div ng-include="'home/navigation.html'"></div>
   <div class="intro container-fluid">
     <h2>Join our community of readers!</h2>
-    <h3>Find a club or create your own to connect with others and discuss your favorite titles!</h3>
+    <h3>dFind a club or create your own to connect with others and discuss your favorite titles!</h3>
   </div>
   
   <div class="container">
@@ -25,7 +25,7 @@
           </div>
           <div>
             <ul class="club-list">
-              <li class="club-list-item" ng-repeat="club in clubs | filter:queryFilter"><a href="#" ui-sref="clubs/club"> {{club.name}} - {{club.location}}</a></li>    
+              <li class="club-list-item" ng-repeat="club in clubs | filter:queryFilter"><a href="#" ui-sref="home.club({id: club.id})"> {{club.name}} - {{club.location}}</a></li>    
             </ul>
           </div>
         </div>

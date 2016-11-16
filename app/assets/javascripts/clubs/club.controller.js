@@ -3,7 +3,7 @@
 
   function ClubController($scope, ClubFactory, $stateParams) {
     var vm = this;
-    vm.clubId = $stateParams.clubId
+    vm.clubId = $stateParams.id
 
     activate();
 
@@ -11,7 +11,7 @@
       getClub();
     }
 
-    function getClub() {
+    function getClub(clubId) {
       return ClubFactory.getClub(vm.clubId)
         .then(setClub)
     }
