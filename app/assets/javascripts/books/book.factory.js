@@ -7,8 +7,8 @@
       getBooks: getBooks
     }
 
-    function getBooks() {
-        return $http.get('https://www.googleapis.com/books/v1/volumes')
+    function getBooks(query) {
+        return $http.get('https://www.googleapis.com/books/v1/volumes?q' + query)
         
           .then(handleResponse) 
           .catch(handleError);

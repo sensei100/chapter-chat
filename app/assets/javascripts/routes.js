@@ -12,38 +12,38 @@
           templateUrl: 'home/home.html',
           controller: 'HomeController as vm'
         })
+        .state('home.main', {
+          url: 'main',
+          templateUrl: 'home/main.html',
+          controller: 'HomeController as vm'
+        })
         .state('home.clubs', {
-          url: '/clubs',
+          url: 'clubs',
           templateUrl: 'clubs/clubs.html',
           controller: 'ClubController as vm'
         })
           .state('home.club', {
           url: 'clubs/:id',
           templateUrl: 'clubs/club.html',
-          controller: 'ClubController as vm',
-          resolve: {
-            club: function($http, $stateParams) {
-              return $http.get('/clubs/' + $stateParams.id);
-            }
-          }
+          controller: 'ClubController as vm'
         })
-         .state('books', {
-          url: '/books',
+         .state('home.books', {
+          url: 'books',
           templateUrl: 'books/books.html',
           controller: 'BookController as vm'
         })
-          .state('about', {
-          url: '/about',
+          .state('home.about', {
+          url: 'about',
           templateUrl: 'about/about.html',
           controller: 'AboutController as vm'
         })
-          .state('profile', {
-          url: '/profile',
+          .state('home.profile', {
+          url: 'profile',
           templateUrl: 'profile/profile.html',
           controller: 'ProfileController as vm'
         })
-          .state('booksDetails', {
-          url: '/books/details',
+          .state('home.booksDetails', {
+          url: 'books/details',
           templateUrl: 'views/books/details.html',
           controller: 'BookDetailsController as vm'
         });

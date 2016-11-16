@@ -10,20 +10,6 @@
       }
     });
 
-    $scope.clubs = [
-      {
-        name: "Jen's Club",
-        location: "PA"
-      },
-      {
-        name: "Testing",
-        location: "Anywhere"
-      },
-      {
-        name: "Third Club",
-        location: "Minneapolis"
-      }
-    ];
   };
     
   HomeController.$inject = ['$scope']

@@ -1,18 +1,30 @@
 (function() { 
   'use strict';
 
-  function ClubController($scope, ClubFactory, $stateParams) {
+  function ClubController(ClubFactory, $stateParams) {
     var vm = this;
-    vm.clubId = $stateParams.id
 
     activate();
 
     function activate() {
-      getClub();
+      console.log(ClubFactory)
+      getClubs()
+      if (!!$stateParams.id) {
+        getClub();
+      }
     }
 
-    function getClub(clubId) {
-      return ClubFactory.getClub(vm.clubId)
+    function getClubs() {
+      return ClubFactory.getClubs()
+                        .then(setClubs)
+
+      function setClubs(data) {
+        vm.clubs = data
+      }                
+    }
+
+    function getClub() {
+      return ClubFactory.getClub($stateParams.clubId)
         .then(setClub)
     }
 
@@ -21,7 +33,7 @@
     }
   };
 
-  ClubController.$inject = ['$scope']
+  ClubController.$inject = ['ClubFactory', '$stateParams']
 
 angular
   .module('app')

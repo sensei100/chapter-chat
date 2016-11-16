@@ -6,13 +6,14 @@
     return {
       getClubs: getClubs,
       getClub: getClub,
-      //getUserClubs: getUserClubs,
-      createClub: createClub
-      //updateClub: updateClub,
-      //deleteClub: deleteClub
+      // getUserClub: getUserClubs,
+      createClub: createClub,
+      updateClub: updateClub,
+      deleteClub: deleteClub
     }
 
     function getClubs() {
+      console.log('inside factory')
       return $http.get('/clubs')
         .then(handleResponse)
         .catch(handleError)

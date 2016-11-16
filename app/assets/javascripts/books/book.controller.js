@@ -1,25 +1,27 @@
-function BookController($scope, BookFactory) {
+function BookController(BookFactory) {
 
       var vm = this;
       vm.books = [];
-      $scope.searchTerm = "jQuery";
+      vm.searchTerm = "jQuery";
 
       activate();
 
       function activate() {
-      $scope.getBooks;
-    }
+        getBooks()
+      }
       
-      $scope.getBooks = function () {
-        BookFactory.get('?q=$scope.searchTerm&maxResults=40&callback=JSON_CALLBACK&key=AIzaSyCqY1fAVBTbVsXLWfExQKxqQKMgo4vO0SA', function(response) {
-          $scope.bookResults = response.items;
-          $scope.orderProp = 'volumeInfo.title';
-        });
+      function getBooks() {
+        BookFactory.getBooks(vm.searchTerm)
+                   .then(setBooks) 
+
+        setBooks(items) {
+          vm.books = items
+        }          
          
       }     
 };
 
-  BookController.$inject = ['$scope', '$http']
+  BookController.$inject = ['BookFactory']
 
 angular
   .module('app')
