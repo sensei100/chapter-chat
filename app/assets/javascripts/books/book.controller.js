@@ -1,7 +1,7 @@
 (function() { 
   'use strict';
 
-  function BookController($scope) {
+  function BookController($scope, $resource) {
     $scope.name = "test"
   }
 

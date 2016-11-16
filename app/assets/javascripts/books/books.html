@@ -8,8 +8,16 @@
 <div ng-include="'home/navigation.html'"></div>
 <div class="book-search-box">
     <h3 class="book-title">Looking for a new book?</h3>
-    <label id="book-search-label">Book Search:</label>
-    <input id="book-input" type="text" name="book-search">
-    <input class="btn book-submit" type="submit" value="Find Books">
-    </div>
+    <form>
+      <label class="book-search-label">Book Search:</label>
+      <input id="book-input" ng-model="searchTerm" type="text" name="book-search"><br><br>
+      <label class="book-search-label">Sort by:</label>
+        <select id="option" ng-model="orderProp">
+          <option value="volumeInfo.authors">Alphabetical by Author</option>
+          <option selected="selected" value="volumeInfo.title">Alphabetical by Title</option>
+        </select>
+            
+      <input class="btn book-submit" type="submit" value="Find Books">
+    </form>
   </div>
+</div>
