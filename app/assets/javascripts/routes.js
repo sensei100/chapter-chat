@@ -37,8 +37,8 @@
           templateUrl: 'about/about.html',
           controller: 'AboutController as vm'
         })
-          .state('home.profile', {
-          url: 'profile',
+          .state('profile', {
+          url: '/profile',
           templateUrl: 'profile/profile.html',
           controller: 'ProfileController as vm'
         })
