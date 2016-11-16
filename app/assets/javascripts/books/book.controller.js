@@ -14,7 +14,7 @@ function BookController(BookFactory) {
         BookFactory.getBooks(vm.searchTerm)
                    .then(setBooks) 
 
-        setBooks(items) {
+        function setBooks(items) {
           vm.books = items
         }          
          

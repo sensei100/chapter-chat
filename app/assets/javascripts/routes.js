@@ -32,8 +32,8 @@
           templateUrl: 'books/books.html',
           controller: 'BookController as vm'
         })
-          .state('home.about', {
-          url: 'about',
+          .state('about', {
+          url: '/about',
           templateUrl: 'about/about.html',
           controller: 'AboutController as vm'
         })
