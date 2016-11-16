@@ -4,8 +4,9 @@ function BookController($scope, BookFactory) {
       $scope.searchTerm = "jQuery";
       
       $scope.getBooks = function () {
+
         BookFactory.get('?q=$scope.searchTerm&maxResults=40&callback=JSON_CALLBACK&key=AIzaSyCqY1fAVBTbVsXLWfExQKxqQKMgo4vO0SA', function(response) {
-           $scope.bookResults = response.items;
+          $scope.bookResults = response.items;
           $scope.orderProp = 'volumeInfo.title';
         });
          
