@@ -1,10 +1,10 @@
-<div class="sidebar-left">
-  <h4>All Available Clubs</h4>
-    <ul ng-repeat="club in vm.clubs">
-      <li ng-bind="club.name"></li>
+<div class="sidebar-left-clubs">
+  <h4 id="club-title">All Available Clubs</h4>
+    <ul class="club-list" ng-repeat="club in vm.clubs">
+      <li class="club-list-item"><a class="sidebar-links" href="" >{{ club.name }} - <em> {{ club.location }} </em></a></li>
     </ul>
 </div>
 
-<div class="club-window">
+<div class="main-content">
   <ui-view></ui-view>
 </div>

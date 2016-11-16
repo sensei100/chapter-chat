@@ -239,7 +239,8 @@ form input[type="text"] {
   padding-bottom: 20px;
 }
 
-.book-title {
+.book-title,
+#club-title {
   text-align: center;
   font-family: 'Sue Ellen Francisco', cursive;
   letter-spacing: 2px;
@@ -277,4 +278,21 @@ form input[type="text"] {
   color: #1d1d1d;
   font-family: 'Raleway', cursive;
   font-size: 1.2em;
+}
+
+.sidebar-left-clubs {
+  float: left;
+  width: 25%;
+  height: 100vh;
+  background: #84ABAA;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.sidebar-links {
+  text-decoration: none;
+}
+
+.sidebar-links:hover {
+  color: #C5BE8B;
 }
