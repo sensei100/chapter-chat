@@ -1,22 +1,20 @@
-(function() { 
-  'use strict';
+function BookController($http) {
 
-  function BookController($scope, BookService) {
-    $scope.searchTerm = "";
+      var vm = this;
+      getBooks()
 
-    $scope.doSearch = function() {
-      BookService.get({
-        q: $scope.searchTerm}, function(response) {
-          $scope.bookResults = resonse.items;
-          $scope.orderProp = 'volumeInfo.title';
-        });
-    }
+      function getBooks() {
+        return $http.get('https://www.googleapis.com/books/v1/volumes', {maxResults: '40', callback: 'JSON_CALLBACK', key: 'AIzaSyCqY1fAVBTbVsXLWfExQKxqQKMgo4vO0SA'})
+        
+          .then(function(response) {
+          console.log(response)
+    })
   }
+};
 
-  BookController.$inject = ['$scope']
+  BookController.$inject = ['$http']
 
 angular
   .module('app')
   .controller('BookController', BookController);
 
-}());
