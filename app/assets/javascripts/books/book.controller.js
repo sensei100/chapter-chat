@@ -1,16 +1,15 @@
-function BookController($scope, $http) {
+function BookController($scope, BookFactory) {
 
       var vm = this;
       $scope.searchTerm = "jQuery";
-      getBooks()
-
-      function getBooks() {
-        return $http.get('https://www.googleapis.com/books/v1/volumes?q=?&maxResults=40&callback=JSON_CALLBACK&key=AIzaSyCqY1fAVBTbVsXLWfExQKxqQKMgo4vO0SA')
-        
-          .then(function(response) {
-          console.log(response)
-    })
-  }
+      
+      $scope.getBooks = function () {
+        BookFactory.get('?q=$scope.searchTerm&maxResults=40&callback=JSON_CALLBACK&key=AIzaSyCqY1fAVBTbVsXLWfExQKxqQKMgo4vO0SA', function(response) {
+           $scope.bookResults = response.items;
+          $scope.orderProp = 'volumeInfo.title';
+        });
+         
+      }     
 };
 
   BookController.$inject = ['$scope', '$http']
