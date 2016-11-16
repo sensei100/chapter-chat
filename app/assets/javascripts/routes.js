@@ -22,7 +22,7 @@
           templateUrl: 'clubs/club.html',
           controller: 'ClubController as vm'
         })
-         .state('home.books', {
+         .state('books', {
           url: '/books',
           templateUrl: 'books/books.html',
           controller: 'BookController as vm'

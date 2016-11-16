@@ -2,7 +2,7 @@
   'use strict';
 
   function HomeController($scope) {
-    Object.defineProperty($scope, "queryFilter", {
+     Object.defineProperty($scope, "queryFilter", {
       get: function() {
         var out = {};
         out[$scope.queryBy || "$"] = $scope.query;
