@@ -1,8 +1,10 @@
-<div class="sidebar" ng-repeat="club in vm.clubs">
-  
-  <h1 ng-bind="club.name"></h1>
-
+<div class="sidebar-left">
+  <h4>All Available Clubs</h4>
+    <ul ng-repeat="club in vm.clubs">
+      <li ng-bind="club.name"></li>
+    </ul>
 </div>
+
 <div class="club-window">
   <ui-view></ui-view>
 </div>
