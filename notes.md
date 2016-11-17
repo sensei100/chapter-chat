@@ -22,3 +22,16 @@ Javascript and AngularJS:
 - Moment.js (Not sure if I need this)
 - Bootstrap or Semantic UI?
 
+Thoughts on authentication and showing information:
+- Need 3 levels of access: admin, member, user
+  - admin should be able to edit/delete clubs
+  - members should be able to post on a club page
+  -users can view all information, but need to join to participate
+- admin should be assigned when someone creates a club
+-member status should be assigned when someone clicks join
+- edit club button should only be seen by admin
+-join button should only be seen by non-members
+
+Need to set up login and new user sign up
+Need to create a reading profile that can be updated by user
+
