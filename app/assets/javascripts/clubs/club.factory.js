@@ -13,7 +13,6 @@
     }
 
     function getClubs() {
-      console.log('inside factory')
       return $http.get('/clubs')
         .then(handleResponse)
         .catch(handleError)
@@ -35,8 +34,8 @@
           .catch(handleError);
         }
 
-    function getClub(clubId) {
-      return $http.get('club', {params: {clubId: clubId}})
+    function getClub(id) {
+      return $http.get('clubs/club/', {params: {id: id}})
         .then(handleResponse)
         .catch(handleError);
     }

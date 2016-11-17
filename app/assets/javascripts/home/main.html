@@ -8,7 +8,7 @@
     </div>
     <div>
       <ul class="club-list" ng-controller="ClubController as vm">
-        <li class="club-list-item" ng-repeat="club in vm.clubs | filter:queryFilter"><a href="#" ui-sref="home.club({id: club.id})"> {{club.name}} - {{club.location}}</a></li>    
+        <li class="club-list-item" ng-repeat="club in vm.clubs | filter:queryFilter"><a href="#" ui-sref="home.clubs.club({id: club.id})"> {{club.name}} - {{club.location}}</a></li>    
       </ul>
     </div>
     </div> 

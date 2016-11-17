@@ -7,7 +7,6 @@
     activate();
 
     function activate() {
-      console.log(ClubFactory)
       getClubs()
       if (!!$stateParams.id) {
         getClub();
@@ -24,7 +23,7 @@
     }
 
     function getClub() {
-      return ClubFactory.getClub($stateParams.clubId)
+      return ClubFactory.getClub($stateParams.id)
         .then(setClub)
     }
 
