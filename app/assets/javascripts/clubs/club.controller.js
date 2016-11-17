@@ -18,7 +18,7 @@
                         .then(setClubs)
 
       function setClubs(data) {
-        vm.clubs = data
+        vm.clubs = data;
       }                
     }
 
