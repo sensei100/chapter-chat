@@ -23,14 +23,9 @@
           controller: 'ClubController as vm'
         })
           .state('home.clubs.club', {
-          url: '/club/:id',
+          url: '/:id',
           templateUrl: 'clubs/club.html',
-          controller: 'ClubController as vm',
-          resolve: {
-            club: function($stateParams, ClubFactory) {
-              return ClubFactory.getClub($stateParams.id)
-            }
-          }
+          controller: 'ClubController as vm'
         })
          .state('home.books', {
           url: 'books',

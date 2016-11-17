@@ -35,7 +35,7 @@
         }
 
     function getClub(id) {
-      return $http.get('#/clubs/club/' + $stateParams.id)
+      return $http.get('clubs/' + $stateParams.id)
         .then(handleResponse)
         .catch(handleError);
     }
