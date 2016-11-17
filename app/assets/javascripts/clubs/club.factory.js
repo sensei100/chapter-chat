@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function ClubFactory($http) {
+  function ClubFactory($http, $stateParams) {
     return {
       getClubs: getClubs,
       getClub: getClub,
@@ -35,7 +35,7 @@
         }
 
     function getClub(id) {
-      return $http.get('clubs/club/', {params: {id: id}})
+      return $http.get('#/clubs/club/' + $stateParams.id)
         .then(handleResponse)
         .catch(handleError);
     }
@@ -62,7 +62,7 @@
     }
   }
 
-  ClubFactory.$inject = ['$http']
+  ClubFactory.$inject = ['$http', '$stateParams']
 
   angular
     .module('app')
