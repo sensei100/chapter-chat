@@ -1,6 +1,18 @@
 
 
 <div ng-controller="ClubController as vm">
-  <h1 class="club-title">{{ $parent.vm.club.name }}</h1>
+  <h1 class="club-title">{{ vm.club.name }}</h1>
 </div>
 
+
+<div id="current-book">
+  <h5>Current Book:</h5><br>
+  <h4 id="currentbook-title">{{ vm.club.currentbook.title }}</h4>
+  <h5>{{ vm.club.currentbook.author }}</h5>
+</div>
+
+<div id="member-list">
+  <ul ng-repeat="">
+    <li>{{ vm.club.users }}</li>
+  </ul>
+</div>

@@ -288,7 +288,7 @@ form input[type="text"] {
   height: 100vh;
   background: #84ABAA;
   margin-top: 5px;
-  padding: 15px;
+  padding: 25px;
   box-sizing: border-box;
   font-family: 'Raleway', cursive;
   font-size: 1.0em;
@@ -306,4 +306,21 @@ form input[type="text"] {
   font-family: 'Raleway', cursive;
   font-size: 1.3em;
   margin-bottom: 15px;
+}
+
+#current-book {
+  height: 200px;
+  width: 200px;
+  margin: 20px 55%;
+  font-family: 'Raleway', cursive;
+  font-size: 1.3em;
+  background: #B9340B;
+  text-align: center;
+  padding-top: 30px;
+  border: 1px solid #444;
+  color: #C5BE8B;
+}
+
+#currentbook-title {
+  font-weight: bold;
 }
