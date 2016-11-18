@@ -1,9 +1,7 @@
 function BookController(BookFactory) {
 
       var vm = this;
-      vm.books = [];
-      vm.searchTerm = "jQuery";
-
+      
       activate();
 
       function activate() {
@@ -11,11 +9,11 @@ function BookController(BookFactory) {
       }
       
       function getBooks() {
-        BookFactory.getBooks(vm.searchTerm)
+        BookFactory.getBooks()
                    .then(setBooks) 
 
-        function setBooks(items) {
-          vm.books = items
+        function setBooks(data) {
+          vm.books = data;
         }          
          
       }     

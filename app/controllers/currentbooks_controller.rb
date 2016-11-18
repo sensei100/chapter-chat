@@ -1,13 +1,13 @@
-class CurrentbookController < ApplicationController
+class CurrentbooksController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update, :destroy]
 
   def index
-    currentbooks = CurrentBook.all
+    currentbooks = Currentbook.all
     render json: currentbooks
   end
 
   def show
-    currentbook = CurrentBook.find(params[:id])
+    currentbook = Currentbook.find(params[:id])
     render json: currentbook
   end
 
@@ -24,7 +24,7 @@ class CurrentbookController < ApplicationController
   end
 
   def update
-    currentbook = CurrentBook.find(params[:id])
+    currentbook = Currentbook.find(params[:id])
     if currentbook.update(currentbook_params)
       render json: { status: 'ok' }
     else
@@ -35,7 +35,7 @@ class CurrentbookController < ApplicationController
   end
 
   def destroy
-    currentbook = CurrentBook.find(params[:id])
+    currentbook = Currentbook.find(params[:id])
     
   end
 
