@@ -325,9 +325,16 @@ form input[type="text"] {
   font-weight: bold;
 }
 
-#member-list {
+#member-list a {
   list-style-type: none;
   font-family: 'Raleway', cursive;
   font-size: 1.3em;
-  margin-left: 50px;
+  line-height: 2;
+  color: #42282C;
+  text-decoration: none;
+}
+
+.members {
+  margin: 100px 30%;
+  font-family: 'Raleway', cursive;
 }

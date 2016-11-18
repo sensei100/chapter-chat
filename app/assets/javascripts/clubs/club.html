@@ -11,8 +11,9 @@
   <h5>{{ vm.club.currentbook.author }}</h5>
 </div>
 
-<div>
+<div class="members">
+  <h4>Club Members</h4>
   <ul id="member-list" ng-repeat="user in vm.club.users">
-    <li>{{ user.username }}</li>
+    <li><a href="#" ui-sref="">{{ user.username }}</a></li>
   </ul>
 </div>
