@@ -3,6 +3,7 @@
 </div>
 
 <form ng-submit="login()">
+<input name="authenticity_token" type="hidden" ng-model="myModal.token" ng-init="myModel.token='<%= form_authenticity_token %>'">
   <div class="input-group">
     <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
   </div>
