@@ -18,7 +18,7 @@
     function createClub() {
       return ClubFactory.createClub(ctrl.newClub)
         .then(function() {
-          $state.go('home/clubs')
+          $state.go('home.clubs')
         })
     }
   }
