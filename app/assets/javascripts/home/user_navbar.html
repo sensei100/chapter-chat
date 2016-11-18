@@ -2,10 +2,10 @@
   <div id="user-navbar" class="container">
     <ul class="nav navbar-nav user-nav">
       <li class="user-nav-item"><a href="#/home">Home</a></li>
-      <li class="user-nav-item" ng-hide="signedIn()"><a href="#/login">Log In</a></li>
-      <li class="user-nav-item" ng-hide="signedIn()"><a href="#/register">Register</a></li>
-      <li class="user-nav-item" ng-show="signedIn()"><a href="#/">{{ user.username }}</a></li>
-      <li class="user-nav-item" ng-show="signedIn()"><a ng-click="logout()">Log Out</a></li>
+      <li class="user-nav-item" ng-hide="NavController.signedIn()"><a href="#" ui-sref="login">Log In</a></li>
+      <li class="user-nav-item" ng-hide="NavController.signedIn()"><a href="#" ui-sref="register">Register</a></li>
+      <li class="user-nav-item" ng-show="NavController.signedIn()"><a href="#">{{ user.username }}</a></li>
+      <li class="user-nav-item" ng-show="NavController.signedIn()"><a href="#" ng-click="NavController.logout()">Log Out</a></li>
     </ul>
   </div>
 </div>
