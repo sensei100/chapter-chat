@@ -1,0 +1,7 @@
+<div class="current-books" ng-controller="BookController as vm">
+  <h1 id="books-title">What is everyone else reading?</h1>
+    <h2 id="books-subtitle">Check out the list of current books</h2>
+      <ul class="current-books-list" ng-repeat="book in vm.books">
+        <li>{{book.title}} - {{book.author}}</li>
+      </ul>
+</div>
