@@ -47,25 +47,29 @@
           templateUrl: 'views/books/details.html',
           controller: 'BookDetailsController as vm'
         })
-          .state('login', {
+          .state('home.login', {
           url: '/login',
           templateUrl: 'auth/login.html',
           controller: 'AuthController',
-          onEnter: ['$state', 'Auth', function($state, Auth) {
-          Auth.currentUser().then(function(){
-            $state.go('home');
-        })
-      }]
+          onEnter: function($state, Auth){
+          if (Auth._currentUser){
+            Auth.currentUser().then(function(){
+              $state.go('home.main')
+            })
+          }
+      }
     })
           .state('register', {
-          url: '/register',
+          url: 'register',
           templateUrl: 'auth/register.html',
           controller: 'AuthController',
-          onEnter: ['$state', 'Auth', function($state, Auth) {
-          Auth.currentUser().then(function(){
-            $state.go('home');
-        })
-      }]
+          onEnter: function($state, Auth){
+          if (Auth._currentUser){
+            Auth.currentUser().then(function(){
+              $state.go('home.main')
+            })
+          }
+      }
     });
 
         $urlRouterProvider.otherwise('/');

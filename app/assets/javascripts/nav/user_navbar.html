@@ -1,11 +1,11 @@
-<div class="navbar" ng-controller="NavController">
+<div class="navbar">
   <div id="user-navbar" class="container">
     <ul class="nav navbar-nav user-nav">
       <li class="user-nav-item"><a href="#/home">Home</a></li>
-      <li class="user-nav-item" ng-class="{'active': state == 'login'}" ng-hide="AuthController.signedIn()"><a href="" ui-sref="login">Log In</a></li>
-      <li class="user-nav-item" ng-hide="AuthController.signedIn()"><a href="" ui-sref="register">Register</a></li>
-      <li class="user-nav-item" ng-show="AuthController.signedIn()"><a href="">{{ AuthController.user.username }}</a></li>
-      <li class="user-nav-item" ng-show="AuthController.signedIn()"><a href="" ui-sref="home" ng-click="AuthController.logout()">Log Out</a></li>
+      <li class="user-nav-item"  ng-hide="signedIn()"><a href="" ui-sref="home.login">Log In</a></li>
+      <li class="user-nav-item" ng-hide="signedIn()"><a href="" ui-sref="home.register">Register</a></li>
+      <li class="user-nav-item" ng-show="signedIn()"><a href="">{{ user.username }}</a></li>
+      <li class="user-nav-item" ng-show="signedIn()"><a href="" ui-sref="home" ng-click="logout()">Log Out</a></li>
     </ul>
   </div>
 </div>
