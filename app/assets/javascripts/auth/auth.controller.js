@@ -1,28 +1,27 @@
 (function() { 
   'use strict';
 
-    function AuthController($state, Auth) {
-        var vm = this;
+  function AuthController($scope, $state, Auth) {
+    var config = {
+      headers: {
+        'X-HTTP-Method-Override': 'POST'
+      }
+   
+    $scope.login = function() {
+    Auth.login($scope.user).then(function(){
+      $state.go('home');
+    });
+  };
 
-        vm.login = login;
-        vm.register = register;
+  $scope.register = function() {
+    Auth.register($scope.user).then(function(){
+      $state.go('home');
+    });
+  };
+    
+}
 
-        function login() {
-            Auth.login(vm.user)
-                .then(goToList);
-        };
-
-        function register() {
-            Auth.register(vm.user)
-                .then(goToList)
-        };
-
-        function goToList() {
-            $state.go('home.main');
-        }
-    };
-
-    AuthController.$inject = ['$state', 'Auth'];
+AuthController.$inject = ['$scope', '$state', 'Auth']
 
 angular
   .module('app')

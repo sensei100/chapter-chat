@@ -8,7 +8,4 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def update_password
-  end
-
 end

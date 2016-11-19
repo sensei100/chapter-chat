@@ -22,6 +22,7 @@
   });
 
   $scope.$on('devise:logout', function (e, user){
+      $scope.user = user;
       $scope.isAuthenticated = false;
   });
 

@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
   root 'application#index'
   
-  devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', registration: 'register', sign_up: 'cmon_let_me_in' }
-        
-       
- 
-    
-
-  
+  devise_for :users
+     
   resources :clubs, only: [:create, :destroy, :update, :index, :show]
   resources :books, only: [:create, :destroy, :update, :index, :show]
   resources :currentbooks, only: [:create, :destroy, :update, :index, :show]
