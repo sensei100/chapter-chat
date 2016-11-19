@@ -50,22 +50,22 @@
           .state('login', {
           url: '/login',
           templateUrl: 'auth/login.html',
-          controller: 'AuthController'
-          //onEnter: ['$state', 'Auth', function($state, Auth) {
-          //Auth.currentUser().then(function(){
-            //$state.go('home');
-        //})
-      //}]
+          controller: 'AuthController',
+          onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function(){
+            $state.go('home');
+        })
+      }]
     })
           .state('register', {
           url: '/register',
           templateUrl: 'auth/register.html',
-          controller: 'AuthController'
-          //onEnter: ['$state', 'Auth', function($state, Auth) {
-          //Auth.currentUser().then(function(){
-           // $state.go('home');
-        //})
-      //}]
+          controller: 'AuthController',
+          onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function(){
+            $state.go('home');
+        })
+      }]
     });
 
         $urlRouterProvider.otherwise('/');

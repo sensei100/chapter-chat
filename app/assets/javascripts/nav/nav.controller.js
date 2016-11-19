@@ -3,39 +3,28 @@
 
   function NavController($scope, Auth) {
 
-   var vm = this
+  $scope.signedIn = Auth.isAuthenticated;
 
-        vm.signedIn = Auth.isAuthenticated;
-        vm.logout = Auth.logout;
-        vm.getCurrentUser = getCurrentUser;
+  $scope.logout = Auth.logout;
 
-        activate();
+  Auth.currentUser()
+    .then(function(user) {
+      $scope.user = user;
+    });
 
-        function activate() {
-            getCurrentUser()
-        }
+  $scope.$on('devise:new-registration', function(e, user) {
+    $scope.user = user;
+  });
 
-        function getCurrentUser() {
-            return Auth.currentUser()
-                       .then(setCurrentUser)
-        }
+  $scope.$on('devise:login', function(e, user) {
+    $scope.user = user;
+  });
 
-        function setCurrentUser(user) {
-            return vm.user = user;
-        };
+  $scope.$on('devise:logout', function(e, user) {
+    $scope.user = {};
+  });
 
-        $scope.$on('devise:new-registration', function(e, user){
-            return vm.user = user;
-        });
-        $scope.$on('devise:login', function(e, user){
-            return vm.user = user;
-        });
-        $scope.$on('devise:logout', function(e, user){
-            return vm.user = {};
-        });
-
-
-}
+};
 
 NavController.$inject = ['$scope', 'Auth']
 

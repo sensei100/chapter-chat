@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'application#index'
   
   devise_for :users
+
+  resources :users
      
   resources :clubs, only: [:create, :destroy, :update, :index, :show]
   resources :books, only: [:create, :destroy, :update, :index, :show]
