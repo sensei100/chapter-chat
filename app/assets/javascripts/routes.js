@@ -52,8 +52,8 @@
           templateUrl: 'auth/_login.html',
           controller: 'AuthController',
           onEnter: ['$state', 'Auth', function($state, Auth) {
-          Auth.currentUser().then(function (){
-            $state.go('home.main');
+          Auth.currentUser().then(function(){
+            $state.go('home');
         })
       }]
     })
@@ -62,8 +62,8 @@
           templateUrl: 'auth/_register.html',
           controller: 'AuthController',
           onEnter: ['$state', 'Auth', function($state, Auth) {
-          Auth.currentUser().then(function (){
-            $state.go('home.main');
+          Auth.currentUser().then(function(){
+            $state.go('home');
         })
       }]
     });

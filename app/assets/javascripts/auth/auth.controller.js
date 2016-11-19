@@ -1,27 +1,22 @@
 (function() { 
   'use strict';
 
-  function AuthController($state, Auth) {
-    var vm = this;
-
-    vm.login = login;
-    vm.register = register;
-
-    function login() {
-    Auth.login(vm.user).then(goHome);
-    };
- 
-
-    function register() {
-    Auth.register(vm.user).then(goHome);
-    };
-  
-    function goHome() {
+  function AuthController($scope, $state, Auth) {
+    $scope.login = function() {
+    Auth.login($scope.user).then(function(){
       $state.go('home');
-    };   
-};
+    });
+  };
 
-AuthController.$inject = ['$state', 'Auth']
+  $scope.register = function() {
+    Auth.register($scope.user).then(function(){
+      $state.go('home');
+    });
+  };
+    
+}
+
+AuthController.$inject = ['$scope', '$state', 'Auth']
 
 angular
   .module('app')

@@ -1,51 +1,32 @@
 (function() { 
   'use strict';
 
-  function NavController($scope, Auth, $state) {
+  function NavController($scope, Auth) {
+    $scope.signedIn = Auth.isAuthenticated;
+    $scope.logout = Auth.logout;
 
-    var vm = this;
+    Auth.currentUser().then(function(user){
+    $scope.user = user;
+  });
 
-    vm.signedIn = Auth.isAuthenticated;
-    vm.logout = Auth.logout;
-    vm.getCurrentUser = getCurrentUser;
-
-    //instantiated info  
-
-    activate();
-
-    //defined methods on the vm
-
-    function activate() {
-      getCurrentUser();
-    }
-
-    function getCurrentUser() {
-      return Auth.currentUser().then(setCurrentUser)
-    };
-
-    function setCurrentUser(user) {
-      console.log(user)
-      return vm.user = user;
-    };
-
-    
-     //event listeners for user authentication and logout
+    //event listeners for user authentication and logout
 
     $scope.$on('devise:new-registration', function (e, user){
-      return vm.user = user;
+      $scope.user = user;
   });
 
   $scope.$on('devise:login', function (e, user){
-      return vm.user = user;
+      $scope.user = user;
   });
 
   $scope.$on('devise:logout', function (e, user){
-      return vm.user = {};
+      $scope.user = {};
   });
+
 
 };
 
-NavController.$inject = ['$scope', 'Auth', '$state']
+NavController.$inject = ['$scope', 'Auth']
 
 angular
   .module('app')
