@@ -1,10 +1,12 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery prepend: true, with: :exception
-  respond_to :json
+   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-  after_filter :set_csrf_cookie_for_ng
+  skip_before_action :verify_authenticity_token
+  after_action :set_csrf_cookie
+  respond_to :json
 
-  def set_csrf_cookie_for_ng
+
+  def set_csrf_cookie
     cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
   end
 
@@ -18,11 +20,11 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]
+    added_attrs = [:username, :email, :password]
     devise_parameter_sanitizer.permit :sign_up, keys:
-    [:username]
+    added_attrs
     devise_parameter_sanitizer.permit :account_update, keys:
-    [:username]
+    added_attrs
   end
 end
 
