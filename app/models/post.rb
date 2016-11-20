@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 
-  belongs_to :book
+  belongs_to :club
   belongs_to :user
   has_many :comments
   
