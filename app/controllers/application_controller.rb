@@ -11,6 +11,16 @@ class ApplicationController < ActionController::Base
   def index
   end
 
+  rescue_from ActionController::InvalidAuthenticityToken do |exception|     
+    cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?     
+    message = 'Rails CSRF token error, please try again'     
+    render_with_protection(message.to_json, {:status => :unprocessable_entity}) 
+  end
+    
+  def render_with_protection(object, parameters = {})
+    render parameters.merge(content_type: 'application/json', text: ")]}',\n" + object.to_json)
+  end
+
   protected
 
   def verified_request?

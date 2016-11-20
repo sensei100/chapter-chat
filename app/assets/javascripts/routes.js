@@ -51,25 +51,11 @@
           url: '/login',
           templateUrl: 'auth/login.html',
           controller: 'AuthController'
-          //onEnter: function($state, Auth){
-          //if (Auth._currentUser){
-          //  Auth.currentUser().then(function(){
-           //   $state.go('home.main')
-           // })
-          //}
-      //}
     })
           .state('home.register', {
           url: '/register',
           templateUrl: 'auth/register.html',
           controller: 'AuthController',
-          //onEnter: function($state, Auth){
-          //if (Auth._currentUser){
-          //  Auth.currentUser().then(function(){
-          //    $state.go('home.main')
-          //  })
-          //}
-      //}
     });
 
         $urlRouterProvider.otherwise('/');

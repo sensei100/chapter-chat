@@ -1,10 +1,10 @@
-<div class="navbar">
+<div class="navbar" ng-controller="NavController as nav">
   <div id="user-navbar" class="container">
     <ul class="nav navbar-nav user-nav">
       <li class="user-nav-item"  ><a href="" ui-sref="home.login">Log In</a></li>
       <li class="user-nav-item" ><a href="" ui-sref="home.register">Register</a></li>
       <li class="user-nav-item" ><a href="">{{ user.username }}</a></li>
-      <li class="user-nav-item" ><a href="" ui-sref="home" ng-click="logout()">Log Out</a></li>
+      <li class="user-nav-item" ><button ng-click="nav.logout()">Log Out</button></li>
     </ul>
   </div>
 </div>
