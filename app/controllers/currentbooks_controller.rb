@@ -12,8 +12,8 @@ class CurrentbooksController < ApplicationController
   end
 
   def create
-    club = Club.find(params[:club_id])
-    currentbook = club.currentbooks.new(currentbook_params)
+    @club = Club.find(params[:club_id])
+    currentbook = @club.currentbooks.new(currentbook_params)
     if currentbook.save
       render json: { status: 'ok' }
     else
