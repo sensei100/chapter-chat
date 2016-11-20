@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
-   protect_from_forgery with: :exception
+  protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-  skip_before_action :verify_authenticity_token
   after_action :set_csrf_cookie
   respond_to :json
 
@@ -20,13 +19,13 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    added_attrs = [:username, :email, :password]
-    devise_parameter_sanitizer.permit :sign_up, keys:
-    added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys:
-    added_attrs
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :remember_me, :username) }
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :current_password, :username, :admin) }
+    devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:email, :password, :username, :id, books: [], posts: []) }
   end
 end
+
+ 
 
 
 

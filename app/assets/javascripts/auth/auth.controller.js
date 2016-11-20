@@ -8,26 +8,20 @@
         'X-HTTP-Method-Override': 'POST'
       }
     };
-   
- $scope.register = function(){
-      Auth.register($scope.user, config).then(function(user){
-        console.log(user);
-        $state.go('home.main');
-      }, function(error){
-        console.log(error)
-      });
-    };
 
-    $scope.login = function(){
-      Auth.login($scope.user, config).then(function(user){
-        console.log(user);
-        $state.go('home.main');
-      }, function(error){
-        console.log(error)
-      });
-    }
 
+  $scope.login = function() {
+    Auth.login($scope.user).then(function() {
+      $state.go('home.main');
+    });
+  };
+
+  $scope.register = function() {
+    Auth.register($scope.user).then(function() {
+      $state.go('home.main')
+    })
   }
+}
 
 AuthController.$inject = ['$scope', '$state', 'Auth']
 
