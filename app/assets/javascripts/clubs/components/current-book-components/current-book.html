@@ -1,0 +1,8 @@
+<form id="create-current-book" name="form" ng-submit="$ctrl.createCurrentBook()">     
+    <input class="form-control" type="text" placeholder="Title" name="title" ng-model="$ctrl.newCuurentBook.title" required="required"></input>
+
+    <input type="text" name="author" class="form-control" id="author" placeholder="Author" ng-model="$ctrl.newCurrentBook.author" required="required"></input>
+            
+            
+    <input class="btn btn-submit" type="submit" value="Set Current Book">
+</form>
