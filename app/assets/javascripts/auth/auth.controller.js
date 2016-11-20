@@ -15,7 +15,6 @@
     };
 
     this.signIn = function() {
-      debugger
       Auth.login(this.credentials, this.config).then(function(user) {
         // Successfully redirects. Since route has otherwise - it sends to '/' path
         $location.path('/user');
