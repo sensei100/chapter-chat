@@ -7,7 +7,7 @@
     bindings: {
       name: '@'
     },
-    templateUrl: 'profile/components/clubs-component/clubs.html'
+    templateUrl: 'profile/components/clubs-component/userclubs.html'
   }
 
   function ClubsComponentController(ClubFactory) {
