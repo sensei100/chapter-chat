@@ -3,11 +3,7 @@
 
   function AuthController($scope, $state, Auth) {
 
-    var config = {
-      headers: {
-        'X-HTTP-Method-Override': 'POST'
-      }
-    };
+   
 
 
   $scope.login = function() {

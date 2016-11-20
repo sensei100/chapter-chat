@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   after_action :set_csrf_cookie
   respond_to :json
 
-
   def set_csrf_cookie
     cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
   end
@@ -21,7 +20,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :remember_me, :username) }
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :current_password, :username, :admin) }
-    devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:email, :password, :username, :id, books: [], posts: []) }
+    devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+    user_params.permit(:username, :email)
+    end
   end
 end
 

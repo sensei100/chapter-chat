@@ -2,7 +2,7 @@
   <h1>Log In</h1>
 </div>
 
-<form ng-controller="AuthController as auth" ng-submit="login()">
+<form ng-controller="AuthController as auth" ng-init="user = {}" ng-submit="login()">
   <div class="input-group">
     <input type="email" class="form-control" placeholder="Email" ng-model="auth.user.email">
   </div>
