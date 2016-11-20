@@ -1,5 +1,7 @@
-<form id="create-current-book" name="form" ng-submit="$ctrl.createCurrentBook()">     
-    <input class="form-control" type="text" placeholder="Title" name="title" ng-model="$ctrl.newCuurentBook.title" required="required"></input>
+<form id="create-current-book" name="form" ng-submit="$ctrl.createCurrentBook()">   
+
+    <input type="hidden" name="club_id" value="club_id">  
+    <input class="form-control" type="text" placeholder="Title" name="title" ng-model="$ctrl.newCurrentBook.title" required="required"></input>
 
     <input type="text" name="author" class="form-control" id="author" placeholder="Author" ng-model="$ctrl.newCurrentBook.author" required="required"></input>
             

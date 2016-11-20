@@ -9,7 +9,8 @@
       // getUserClub: getUserClubs,
       createClub: createClub,
       updateClub: updateClub,
-      deleteClub: deleteClub
+      deleteClub: deleteClub,
+      createCurrentBook: createCurrentBook
     }
 
     function getClubs() {
@@ -60,6 +61,22 @@
     function handleError(error) {
       console.log(error) 
     }
+
+    function createCurrentBook(currentBook) {
+      var req = {
+        method: 'POST',
+        url: '/currentbooks',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: { 
+          currentBook: currentBook
+        }
+      };
+
+        return $http(req)
+          .catch(handleError);
+        }
   }
 
   ClubFactory.$inject = ['$http', '$stateParams']

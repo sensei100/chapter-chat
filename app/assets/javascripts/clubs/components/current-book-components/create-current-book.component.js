@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var currentBook = {
+  var createCurrentBook = {
     transclude: true,
     controller: CurrentBookComponentController,
     bindings: {
@@ -10,13 +10,13 @@
     templateUrl: 'clubs/components/current-book-components/current-book.html'
   }
 
-  function CurrentBookComponentController(BookFactory, $state) {
+  function CurrentBookComponentController(ClubFactory, $state) {
     var ctrl = this;
 
     ctrl.createCurrentBook = createCurrentBook;
   
   function createCurrentBook() {
-    return BookFactory.createCurrentBook(ctrl.newCurrentBook)
+    return ClubFactory.createCurrentBook(ctrl.newCurrentBook)
         .then(function() {
           $state.go('home.clubs')
         })
@@ -25,6 +25,6 @@
 
   angular
     .module('app')
-    .component('currentBook', currentBook)
+    .component('createCurrentBook', createCurrentBook)
 
 }());

@@ -1,5 +1,5 @@
 class CurrentbooksController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update, :destroy]
+  
 
   def index
     currentbooks = Currentbook.all
@@ -13,7 +13,7 @@ class CurrentbooksController < ApplicationController
 
   def create
     club = Club.find(params[:club_id])
-    currentbook = club.currentbook.new(currentbook_params)
+    currentbook = club.currentbooks.new(currentbook_params)
     if currentbook.save
       render json: { status: 'ok' }
     else
