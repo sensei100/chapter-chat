@@ -30,6 +30,20 @@
     function setClub(data) {
        vm.club = data;
     }
+
+    vm.addUser = function(user) {
+    vm.club.users.push(user);
+    vm.club.$update(function(result) {
+    console.log(result);
+  });
+    $state.go($state.current, {}, {reload: true});
+};
+
+  vm.isCreator = function(user, group) {
+    if(user.id === group.user_id) {
+      return true;
+    }
+  };
   };
 
   ClubController.$inject = ['ClubFactory', '$stateParams']

@@ -17,9 +17,9 @@
     this.signIn = function() {
       Auth.login(this.credentials, this.config).then(function(user) {
         // Successfully redirects. Since route has otherwise - it sends to '/' path
-        $location.path('/user');
+        $location.path('/home.main');
       }, function(error) {
-        alert("failed");
+        alert("There was a problem logging in.");
       });
     } 
 

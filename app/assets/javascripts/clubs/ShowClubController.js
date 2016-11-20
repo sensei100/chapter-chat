@@ -4,9 +4,9 @@
   function ShowClubController($state, $stateParams, Club, Auth) {
     var ctrl = this;
 
-    ctrl.group = Group.get({ id: $stateParams.id });
+    ctrl.club = Club.get({ id: $stateParams.id });
 
-  console.log(ctrl.group);
+  console.log(ctrl.club);
 
   Auth.currentUser()
     .then(function(user) {
@@ -21,6 +21,14 @@
           $state.go('home.clubs')
         })
     }
+
+  ctrl.addUser = function(user) {
+    ctrl.club.users.push(user);
+    ctrl.club.$update(function(result) {
+    console.log(result);
+  });
+    $state.go($state.current, {}, {reload: true});
+};
 
   ctrl.isCreator = function(user, group) {
     if(user.id === group.user_id) {

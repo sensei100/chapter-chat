@@ -14,8 +14,7 @@
     var ctrl = this;
 
     ctrl.createCurrentBook = createCurrentBook;
-    ctrl.club = Club.get({ id: $stateParams.id });
-  
+    
   function createCurrentBook() {
     return ClubFactory.createCurrentBook(ctrl.newCurrentBook)
         .then(function() {

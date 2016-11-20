@@ -1,6 +1,6 @@
 
 
-<div ng-controller="ClubController as vm">
+<div ng-controller=" ClubController as vm">
   <h1 class="club-title">{{ vm.club.name }}</h1>
 </div>
 
@@ -20,4 +20,8 @@
   <ul id="member-list" ng-repeat="user in vm.club.users">
     <li><a href="#">{{ user.username }}</a></li>
   </ul>
+</div>
+
+<div class="join">
+  <button class="btn" ng-click="vm.addUser(vm.user)">Join Club</button
 </div>
