@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update, :destroy]
+  #before_action :authenticate_user!, only: [:create, :update, :destroy]
 
   def index
     post = Post.find(params[:id])

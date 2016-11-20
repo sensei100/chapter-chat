@@ -1,11 +1,7 @@
 (function() { 
   'use strict';
 
-  function NavController($scope, Auth) {
-
-  $scope.signedIn = Auth.isAuthenticated;
-
-  $scope.logout = Auth.logout;
+  function NavController(Auth,$scope,$location) {
 
   Auth.currentUser()
     .then(function(user) {
@@ -26,6 +22,7 @@
 
   this.logout = function() {
         Auth.logout().then(function(oldUser) {
+          debugger
           alert("Successfully logged out!");
           $location.path("/");
         }, function(error) {
@@ -34,7 +31,7 @@
       }
 };
 
-NavController.$inject = ['$scope', 'Auth']
+NavController.$inject = ['Auth', '$scope', '$location']
 
 angular
   .module('app')
