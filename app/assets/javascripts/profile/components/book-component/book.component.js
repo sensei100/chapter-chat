@@ -5,7 +5,7 @@
     transclude: true,
     controller: BookComponentController,
     bindings: {
-      title: '@'
+      name: '@'
     },
     templateUrl: 'profile/components/book-component/book.html'
   }

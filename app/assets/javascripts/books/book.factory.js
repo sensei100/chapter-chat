@@ -4,7 +4,8 @@
 
   function BookFactory($http, $stateParams) {
       return {
-      getBooks: getBooks
+      getBooks: getBooks,
+      createBook: createBook
     }
 
     function getBooks() {
