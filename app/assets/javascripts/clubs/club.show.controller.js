@@ -1,20 +1,22 @@
 (function() { 
   'use strict';
 
-  function ShowClubController($state, $stateParams, Club, Auth) {
+  function ClubShowController($state, $stateParams, Auth, ClubFactory) {
     var ctrl = this;
 
-    ctrl.club = Club.get({ id: $stateParams.id });
-
-  console.log(ctrl.club);
-
-  Auth.currentUser()
+    Auth.currentUser()
     .then(function(user) {
       ctrl.user = user;
     });
 
   ctrl.createCurrentBook = createCurrentBook;
   
+    activate();
+
+    function activate() {
+        getClub();
+      }
+    
   function createCurrentBook() {
     return ClubFactory.createCurrentBook(ctrl.newCurrentBook)
         .then(function() {
@@ -22,7 +24,16 @@
         })
     }
 
-  ctrl.addUser = function(user) {
+    function getClub() {
+      return ClubFactory.getClub($stateParams.id)
+        .then(setClub)
+    }
+
+    function setClub(data) {
+       ctrl.club = data;
+    }
+
+    ctrl.addUser = function(user) {
     ctrl.club.users.push(user);
     ctrl.club.$update(function(result) {
     console.log(result);
@@ -39,6 +50,6 @@
 
 angular
   .module('app')
-  .controller('ShowClubController', ShowClubController);
+  .controller('ClubShowController', ClubShowController);
 
 }());

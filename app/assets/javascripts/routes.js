@@ -25,7 +25,7 @@
           .state('home.clubs.club', {
           url: '/:id',
           templateUrl: 'clubs/club.html',
-          controller: 'ClubController as vm'
+          controller: 'ClubShowController as vm'
         })
          .state('home.books', {
           url: 'books',
