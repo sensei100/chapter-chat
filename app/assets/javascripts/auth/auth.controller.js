@@ -1,22 +1,32 @@
 (function() { 
   'use strict';
 
-  function AuthController($scope, $state, Auth) {
+  function AuthController(Auth,$scope,$location) {
+    // might need an auth service
+    this.credentials = {
+      email: '',
+      password: ''
+    }
 
-  $scope.login = function() {
-    Auth.login($scope.user).then(function() {
-      $state.go('home.main');
-    });
-  };
+    this.config = {
+      headers: {
+        'X-HTTP-Method-Override': 'POST'
+      }
+    };
 
-  $scope.register = function() {
-    Auth.register($scope.user).then(function() {
-      $state.go('home.main')
-    })
+    this.signIn = function() {
+      debugger
+      Auth.login(this.credentials, this.config).then(function(user) {
+        // Successfully redirects. Since route has otherwise - it sends to '/' path
+        $location.path('/user');
+      }, function(error) {
+        alert("failed");
+      });
+    }  
+
   }
-}
 
-AuthController.$inject = ['$scope', '$state', 'Auth']
+AuthController.$inject = ['Auth', '$scope', '$location']
 
 angular
   .module('app')
