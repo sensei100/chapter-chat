@@ -1,7 +1,7 @@
 (function() { 
   'use strict';
 
-  function ClubShowController($state, $stateParams, Auth, ClubFactory) {
+  function ClubShowController($state, $stateParams, Auth, ClubFactory, Club) {
     var ctrl = this;
 
     Auth.currentUser()

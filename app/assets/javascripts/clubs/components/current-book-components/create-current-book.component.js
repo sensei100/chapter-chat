@@ -10,8 +10,9 @@
     templateUrl: 'clubs/components/current-book-components/current-book.html'
   }
 
-  function CurrentBookComponentController(ClubFactory, $state) {
+  function CurrentBookComponentController(ClubFactory, $state, Club) {
     var ctrl = this;
+    ctrl.club = Club.get;
 
     ctrl.createCurrentBook = createCurrentBook;
     
